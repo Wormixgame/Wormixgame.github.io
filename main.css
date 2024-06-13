@@ -1,0 +1,204 @@
+* {
+  font-family: 'Manrope';
+}
+
+#block1 {
+  display: flex;
+  flex-direction: column;
+}
+
+#block-header {
+  display: flex;
+  font-weight: 500;
+  margin-bottom: 40px;
+  
+  @media screen and (max-width: 768px){
+    margin-bottom: 30px;
+  }
+}
+
+h2 {
+  @media screen and (min-width: 1280px){
+    font-size: 46px;
+  }
+  font-size: 35px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  /* margin-bottom: 40px; */
+}
+  
+#button-container {
+  display: flex;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#button-container > button {
+  height: 100%;
+  /* aspect-ratio: 1; */
+}
+
+.container {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 130px;
+
+  @media screen and (max-width: 768px){
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.card, .service {
+  width: 25rem; /* 400px */
+  font-size: 21px;
+  flex-shrink: 0;
+}
+
+.card > img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+#card-container, #service-container {
+  display: flex;
+  width: fit-content;
+}
+
+#card-container > *, #service-container > * {
+}
+
+
+#slider {
+  overflow: hidden;
+}
+
+.card-text-block {
+  margin-top: 20px;
+}
+
+.card-text-block > p {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.card-text-block > span {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* BLOCK 2 */
+
+#block2 #bg{
+  object-fit: cover;
+}
+
+#block2 > h2 {
+  margin-bottom: 40px;
+}
+
+.service > #bg{
+  border-radius: 15px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.5);
+  /* background-position: center;
+  background-size: cover; */
+}
+
+.service {
+  border-radius: 15px;
+  position: relative;
+  width: 580px;
+  height: 450px;
+}
+
+.service > #text {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  font-weight: 600;
+  font-size: 32px;
+  padding-top: 30px;
+  padding-left: 40px;
+  width: 66%;
+}
+
+input, label {
+  display: block;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+body {
+  margin: 0;
+}
+
+.card > img {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+}
+
+button > img {
+  margin: auto;
+}
+
+button#back {
+  @media screen and (max-width: 768px){
+    margin-right: 16px;
+  }
+  margin-right: 20px;
+}
+
+
+#block2 #button-container {
+  @media screen and (min-width: 1920px){
+    display: none;
+  }
+  @media screen and (max-width: 768px){
+    display: none;
+  }
+}
+
+#block2 #service-container {
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+    max-width: 100%;
+    gap: 20px
+  }
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#button-container > button > img {
+  @media screen and (min-width: 768px){
+    height: 50px;
+  }
+
+  @media screen and (max-width: 768px){
+    height: 40px;
+  }
+}
+
+.service {
+  @media screen and (max-width: 768px){
+    aspect-ratio: 1.64;
+    width: 100%;
+    /* height: auto; */
+  }
+}
