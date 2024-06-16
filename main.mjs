@@ -41,43 +41,22 @@ document.getElementById('add-card-form').addEventListener('submit', function(eve
   const cardTitle = document.getElementById('card-title').value;
   const cardDescription = document.getElementById('card-description').value;
 
-  addCardToSwiper(imageUrl, cardTitle, cardDescription)
-
-  let cards = JSON.parse(localStorage.getItem("cards")) || [];
-
-  cards.push({
-    url: imageUrl,
-    title: cardTitle,
-    description: cardDescription
-  });
-
-  localStorage.setItem("cards", JSON.stringify(cards));
-
-  // Reset the form
-  event.target.reset();
-
-  setTimeout(function () {
-    swiper_block1.update();
-   }, 500);
-});
-
-function addCardToSwiper(url, title, description){
   const cardContainer = document.getElementById('card-container');
 
   const newCard = document.createElement('div');
   newCard.className = 'card swiper-slide';
 
   const newImage = document.createElement('img');
-  newImage.src = url;
+  newImage.src = imageUrl;
 
   const newTextBlock = document.createElement('div');
   newTextBlock.className = 'card-text-block';
 
   const newTitle = document.createElement('span');
-  newTitle.textContent = title;
+  newTitle.textContent = cardTitle;
 
   const newDescription = document.createElement('p');
-  newDescription.textContent = description;
+  newDescription.textContent = cardDescription;
 
   newTextBlock.appendChild(newTitle);
   newTextBlock.appendChild(newDescription);
@@ -86,16 +65,11 @@ function addCardToSwiper(url, title, description){
   newCard.appendChild(newTextBlock);
 
   cardContainer.appendChild(newCard);
-}
 
-window.onload = function (){
-  let cards = JSON.parse(localStorage.getItem("cards")) || [];
-
-  cards.forEach(function (card){
-    addCardToSwiper(card.url, card.title, card.description);
-  });
+  // Reset the form
+  event.target.reset();
 
   setTimeout(function () {
     swiper_block1.update();
-  }, 500);
-}
+   }, 500);
+});
